@@ -91,7 +91,8 @@ soma_tamanho (x:xs) = (1 + tamanho_ xs, x + soma_ xs)
 --------------------------------------------------
 main = do
  print("01", fatorialDuplo 8)
- print("02", produtoIntervalo 5 1)
+ print("01", fatorialDuplo 7)
+ print("02", produtoIntervalo 1 5)
  print("03", fatorial 5)
  print("04", soma 2 3)
  print("05", potencia 3 2)
