@@ -8,9 +8,9 @@ fatorialDuplo n
 
 -- 2
 produtoIntervalo :: Int -> Int -> Int
-produtoIntervalo a b
- | a > b = 1
- | otherwise = a * produtoIntervalo (a + 1) b
+produtoIntervalo m n
+ | m > n = 1
+ | otherwise = m * produtoIntervalo (m + 1) n
 
 -- 3
 fatorial :: Int -> Int
@@ -26,7 +26,7 @@ soma a b
 potencia :: Int -> Int -> Int
 potencia x n
  | n == 0 = 1
- | otherwise = x * potencia x (n-1)
+ | otherwise = x * potencia x (n - 1)
 
 -- 6
 quociente :: Int -> Int -> Int
@@ -40,14 +40,14 @@ resto a b
  | otherwise = resto (a - b) b
 
 -- 7
-fibonacci_ :: Int -> Int -> Int -> Int
-fibonacci_ n a b
+numeroFibonacci :: Int -> Int -> Int -> Int
+numeroFibonacci n a b
  | n == 0 = a
  | n == 1 = b
- | n >= 2 = fibonacci_ (n-1) b (a+b)
+ | n >= 2 = numeroFibonacci (n-1) b (a+b)
 
 fibonacci :: Int -> Int
-fibonacci n = fibonacci_ n 0 1
+fibonacci n = numeroFibonacci n 0 1
 
 
 -- 8
@@ -88,19 +88,19 @@ soma_tamanho :: [Int] -> (Int, Int)
 soma_tamanho [] = (0, 0)
 soma_tamanho (x:xs) = (1 + tamanho_ xs, x + soma_ xs)
 
----------------------------------------------------
+--------------------------------------------------
 main = do
- print(fatorialDuplo 8)
- print(produtoIntervalo 5 1)
- print(fatorial 5)
- print(soma 2 3)
- print(potencia 3 2)
- print(quociente 6 2)
- print(resto 6 2)
- print(fibonacci 7)
- print(produtoLista [1,2,3])
- print(listaMaiorN [4,3,2,1] 2)
- print(intercala [1,2,3] [4,5,6])
- print(distancia [(1, 2), (3, 4), (1, 3), (5, 6)])
- print(listaMaisN [1,2,3] 4)
- print(soma_tamanho [1,2,3])
+ print("01", fatorialDuplo 8)
+ print("02", produtoIntervalo 5 1)
+ print("03", fatorial 5)
+ print("04", soma 2 3)
+ print("05", potencia 3 2)
+ print("06", quociente 6 2)
+ print("06", resto 6 2)
+ print("07", fibonacci 7)
+ print("08", produtoLista [1,2,3])
+ print("09", listaMaiorN [4,3,2,1] 2)
+ print("10", intercala [1,2,3] [4,5,6])
+ print("11", distancia [(1, 2), (3, 4), (1, 3), (5, 6)])
+ print("12", listaMaisN [1,2,3] 4)
+ print("13", soma_tamanho [1,2,3])
